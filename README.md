@@ -1,6 +1,8 @@
 # Quorum Distributed Setup
 How to setup up a distributed Quorum blockchain network with Istanbul consensus from scratch. This tutorial is a modified version of [this one](https://github.com/jpmorganchase/quorum/wiki/From-Scratch).
 
+## Initialisation
+
 1. Build Quorum as described in this [getting set up](https://github.com/jpmorganchase/quorum/wiki/Getting-Set-Up) section - note that Constellation or Tessera is not required for this walkthrough guide. Ensure that PATH contains geth and bootnode. *The geth in your PATH needs to be the quorum version and should be at least version 1.8 for the following to work (according to [this known issue](https://github.com/jpmorganchase/quorum/issues/670))*. 
 2. Install [istanbul-tools](https://github.com/jpmorganchase/istanbul-tools) and place the `istanbul` binary into PATH.
 3. Create a working directory for each of the X number of initial validator nodes. Assign one node to be the lead for network initialisation.
@@ -13,6 +15,12 @@ How to setup up a distributed Quorum blockchain network with Istanbul consensus 
 10. Initialize all nodes with `geth --datadir data init genesis.json`
 11. Start all nodes and send into background with `PRIVATE_CONFIG=ignore nohup geth --datadir data --permissioned --nodiscover --istanbul.blockperiod 5 --syncmode full --mine --minerthreads 1 --verbosity 5 --networkid 10 --rpc --rpcaddr 0.0.0.0 --rpcport 22000 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,istanbul --emitcheckpoints --port 30303 2>>node.log &` Note that if you are *not* using a permissioned network, then remove the `--permissioned` tag.
 
-Your initial validator nodes will now be operational and you may attach to any node by executing `geth attach data/geth.ipc` in the required node's working directory. 
-
 Note that part 11 starts Quorum without privacy support, as evidenced in prefix `PRIVATE_CONFIG=ignore`.
+
+
+## Initial Checks
+Following the previous setup, your initial validator nodes will now be operational and you may attach to any node by executing `geth attach data/geth.ipc` in the required node's working directory. 
+
+Once attached there are various actions you can perform to check the connectivity of the network. For example:
+- `admin.peers` will detail what other nodes are connected to this one.
+- `eth.blockNumber` will detail how many blocks are on the blockchain. Make sure that this number is increasing.
