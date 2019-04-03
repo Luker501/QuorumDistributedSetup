@@ -18,7 +18,7 @@ How to setup up a distributed Quorum blockchain network with Istanbul consensus 
 Note that part 11 starts Quorum without privacy support, as evidenced in prefix `PRIVATE_CONFIG=ignore`.
 
 
-## Initial Checks
+## Connectivity Checks
 Following the previous setup, your initial validator nodes will now be operational and you may attach to any node by executing `geth attach data/geth.ipc` in the required node's working directory. 
 
 Once attached there are various actions you can perform to check the connectivity of the network. For example:
