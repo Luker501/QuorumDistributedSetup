@@ -1,5 +1,5 @@
 # Quorum Distributed Setup
-How to setup up a distributed Quorum blockchain network with Istanbul consensus from scratch.
+How to setup up a distributed Quorum blockchain network with Istanbul consensus from scratch. This tutorial is a modified version of [this one](https://github.com/jpmorganchase/quorum/wiki/From-Scratch).
 
 1. Build Quorum as described in this [getting set up](https://github.com/jpmorganchase/quorum/wiki/Getting-Set-Up) section - note that Constellation or Tessera is not required for this walkthrough guide. Ensure that PATH contains geth and bootnode. *The geth in your PATH needs to be the quorum version and should be at least version 1.8 for the following to work*. 
 2. Install [istanbul-tools](https://github.com/jpmorganchase/istanbul-tools) and place the `istanbul` binary into PATH.
