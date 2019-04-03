@@ -1,7 +1,7 @@
 # Quorum Distributed Setup
 How to setup up a distributed Quorum blockchain network with Istanbul consensus from scratch.
 
-1. Build Quorum as described in the [getting set up](https://github.com/jpmorganchase/quorum/wiki/Getting-Set-Up) section - note that Constellation or Tessera is not required for this walkthrough guide. Ensure that PATH contains geth and bootnode. *the geth in your PATH needs to be the quorum version and should be at least version 1.8 for the following to work*. 
+1. Build Quorum as described in this [getting set up](https://github.com/jpmorganchase/quorum/wiki/Getting-Set-Up) section - note that Constellation or Tessera is not required for this walkthrough guide. Ensure that PATH contains geth and bootnode. *the geth in your PATH needs to be the quorum version and should be at least version 1.8 for the following to work*. 
 2. Install [istanbul-tools](https://github.com/jpmorganchase/istanbul-tools) and place the `istanbul` binary into PATH.
 3. Create a working directory for each of the X number of initial validator nodes. Assign one node to be the lead for network initialisation.
 4. Change into the lead node's working directory and generate the setup files for X initial validator nodes by executing `istanbul setup --num X --nodes --quorum --save --verbose` **only execute this instruction once, i.e. not X times**. This command will generate several items of interest: `static-nodes.json`; `genesis.json`; and nodekeys for all the initial validator nodes which will sit in numbered directories (i.e. from 0 to X-1). 
