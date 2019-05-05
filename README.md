@@ -1,5 +1,5 @@
 # Quorum Distributed Setup
-How to setup up a distributed Quorum blockchain network with Istanbul consensus from scratch. This tutorial is a modified version of [this one](https://github.com/jpmorganchase/quorum/wiki/From-Scratch).
+How to setup up a distributed Quorum blockchain network with Istanbul consensus from scratch. This tutorial has been forked into the official Quorum guide [here](https://github.com/jpmorganchase/quorum/wiki/From-Scratch).
 
 ## Initialisation
 
